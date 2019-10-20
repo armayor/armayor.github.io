@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "Termodinamica"
 date:   2019-10-19 18:55:14 +0200
 categories: jekyll update
 mathjax: true
