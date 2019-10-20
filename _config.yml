@@ -2,8 +2,7 @@ title: a l l o r a
 author: Miguel Armayor
 email: armayor@protonmail.com
 description: > # this means to ignore newlines until "show_excerpts:"
-  This blog is intented as a compilation of my notes of some Physics
-  and Math courses taken during my Erasmus stay abroad.
+  Physics and Math
 show_excerpts: false # set to true to show excerpts on the homepage
 
 # Minima date format
