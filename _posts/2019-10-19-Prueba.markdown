@@ -1,0 +1,32 @@
+---
+layout: null
+title:  "Prueba"
+date:   2019-10-19 18:55:14 +0200
+categories: jekyll update
+mathjax: true
+comments: true
+---
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+plt.plot([1, 2, 3, 4])
+plt.ylabel('some numbers')
+plt.show()
+```
+
+
+![svg]({{"/assets/images/output_0_0.svg"}})
+
+
+# This is a title
+## This is a subtitle
+
+I would like to thank you all fro this. 
+
+$$V_s=\int_0^\infty f(x)dx$$
+
+
+
+{% include output.html %}
