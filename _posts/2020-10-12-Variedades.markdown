@@ -15,7 +15,7 @@ $$\newcommand{\mvop}[3]{\langle#1\vert#2\vert #3\rangle}$$
 
 We denote by $$\Gamma(E)$$ the volume of the phase space between energies $$E$$ and $$E+\Delta$$, that is
 
-$$\Gamma(E)=\int_{E\leq H(\pmb{q},\pmb{p})\leq E+\Delta} \textrm{d}\pmb{q}\,\textrm{d}\pmb{p}$$
+\[\Gamma(E)=\int_{E\leq H(\pmb{q},\pmb{p})\leq E+\Delta} \textrm{d}\pmb{q}\,\textrm{d}\pmb{p}\]
 
 If $$\Delta$$ is sufficiently small we may rewrite the integral above using Dirac's Delta function
 
