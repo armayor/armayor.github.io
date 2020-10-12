@@ -43,10 +43,14 @@ MathJax.Hub.Config({
          extensions: ["AMSmath.js", "AMSsymbols.js"] }
   }
 });
-
-
+MathJax.Hub.Register.StartupHook('TeX Jax Ready', function () {
+  MathJax.InputJax.TeX.prefilterHooks.Add(function (data) {
+    data.math = data.math.replace(/^% <!\[CDATA\[/, '').replace(/%\]\]>$/, '');
+  });
+});
 </script>
 
+  <script type="text/javascript" id="MathJax-script" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/latest.js"></script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Queue(function() {
     // Fix <code> tags after MathJax finishes running. This is a
