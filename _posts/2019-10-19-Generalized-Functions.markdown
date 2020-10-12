@@ -7,4 +7,4 @@ mathjax: true
 comments: true
 ---
 
-**Definition:** Let $$\Omega\subset \mathbb{R}$$ be an open set. We define $$ \mathcal{D}(\Omega)$$ to be the class of test funcions on $$\Omega$$, i.e. the set of functions $$\phi$$ which have compact support ($$\exists K\subseteq \Omega$$ such that $$\phi(x)=0$$ for all $$x\notin K$$). 
+**Definition:** Let $$\Omega\subset \mathbb{R}$$ be an open set. We define $$ \mathcal{D}(\Omega)$$ to be the class of test funcions on $$\Omega$$, i.e. the set of functions $$\phi$$ which have compact support ($$\exists K\subseteq \Omega$$ such that $$\phi(x)=0$$ for all $$x\notin K$$). sd
