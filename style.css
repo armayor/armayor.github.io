@@ -1,25 +1,51 @@
 * {
-    background-color: rgb(30, 30, 30);
+  background-color: rgb(30, 30, 30);
   }
   h1 {
-    color: green;
-    text-decoration: underline;
-    font-family: sans-serif;
-  }
-  h2 {
-    color: grey;
-  }
-  h3 {
-      color:blueviolet;
-  } 
-  p {
-    font-size: 16pt;
-    font-family: serif;
     margin-top: 100px;
     margin-bottom: 100px;
     margin-right: 150px;
     margin-left: 80px;
+    color: green;
+    font-family: sans-serif;
   }
+  h2 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    margin-right: 150px;
+    margin-left: 90px;
+    color: rgb(28, 122, 74);
+  }
+  h3 {
+    color:blueviolet;
+  } 
+  p {
+    font-size: 16pt;
+    font-family: serif;
+    width: 1000px;
+    margin: auto;
+    /* border: 1px solid red;*/
+  }
+
+  /* unvisited link */
+a:link {
+  color: rgb(218, 218, 218);
+}
+
+/* visited link */
+a:visited {
+  color: rgb(164, 164, 164);
+}
+
+/* mouse over link */
+a:hover {
+  color: rgb(255, 255, 255);
+}
+
+/* selected link */
+a:active {
+  color: rgb(255, 255, 255);
+}
 
   body {
     color: rgb(218, 218, 218);
