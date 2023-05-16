@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Principal Fibre Bundles</title>
+        <title>Equivalent Definitions of One-forms</title>
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
         <script type="text/javascript" id="MathJax-script" async
           src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
@@ -10,10 +10,36 @@
     </head>
     <body>
         <h1>&#xA7; <a href="../index.html"; style=color:inherit;>Lapalissiano</a></h1>
-        <h2>&#xA7; Principal Fibre Bundles</h2>
-        <p>
-            <strong>Definition. </strong> Let \(G\) be a Lie Group,...
+        <h2>&#xA7; Equivalent Definitions of One-forms</h2>
 
+        <p>
+            <strong>Definition I. </strong> Let \(M\) be a manifold and consider the cotangent bundle \((T^*M, \pi,M)\). 
+            <strong>A one-form</strong> on \(M\) is a section \(\omega\in\Gamma(T^*M):=\Omega^1(M)\).
+        </p>
+
+        <p>
+            <strong>Definition II. </strong> Let \(M\) be a manifold and consider the cotangent bundle \((T^*M, \pi,M)\). 
+            <strong>A one-form</strong> on \(M\) is a is a map \(\omega\colon \Gamma(TM)\to \mathcal{C}^\infty(M)\).
+        </p>
+
+        <p>
+            <strong>Proposition. </strong> Both definitions of one-forms are equivalent.
+        </p>
+        <p>
+            <em>Proof. </em>  Suppose that a one-form is a section \(\omega\in \Gamma(T^*M)\). Then, \(\omega\colon M\to T^*M\), 
+            so that \(\omega(p):=(p, \omega_p)\), where \(\omega_{p}\in T^*_pM\). We can define a map \(\Omega \colon \Gamma(TM)\to\mathcal{C}^\infty(M)\) 
+            such that for a section \(X\in\Gamma(TM)\), given by \(X(p)=(p,X_p)\) where \(X_p\in T_pM\), we have:
+
+            $$\begin{equation}
+                \Omega(X):= \omega_p(X_p) \quad \forall p\in M
+            \end{equation}$$
+    
+            After which we simply rename \(\Omega\equiv\omega\) and we have shown one implication. 
+        </p>
+        <p>It remains to show, that if \(\omega\colon \Gamma(TM)\to \mathcal{C}^\infty(M)\), then we can define a smooth section 
+        \(\Omega\in\Gamma(T^*M)\). We do so as follows: for each \(p\in M\), we define \(\Omega(p)=(p,\Omega_p)\), where 
+        \(\Omega_p\in T^*_pM\) is defined via \(\Omega_p(X_p):=\omega(X)(p)\), where the vector field \(X\) is constructed 
+        such that \(X(p)=(p,X_p)\). \(\blacksquare\)
         </p>
     </body>
 </html>
