@@ -56,7 +56,7 @@ body {
   position: -webkit-sticky; /* Safari */
   position: sticky;
   background-color: #1454d5;
-
+  z-index:1;
 }
 
 .li_bar {
