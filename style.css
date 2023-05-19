@@ -1,19 +1,15 @@
-* {
-  background-color: rgb(30, 30, 30);
-  }
-  h1 {
-    color: green;
-    font-family: sans-serif;
-  }
-  h2 {
-    color: rgb(28, 122, 74);
-  }
-  h3 {
-    color:blueviolet;
-  } 
+*, html {
+  margin:0;
+  padding:0;  
+}
+
   p {
-    font-size: 16pt;
+    font-size: 14pt;
     font-family: serif;
+    margin-bottom: 20px;
+    margin-right: 150px;
+    margin-left: 150px;
+    margin-top: 10px;
   }
 
   /* unvisited link */
@@ -36,12 +32,20 @@ a:active {
   color: rgb(255, 255, 255);
 }
 
+body.welcome {
+  color: rgb(218, 218, 218);
+  margin: 0;
+  padding: 0;
+  background-color: rgb(31, 40, 44);
+  background-image: url("img/fomdo.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
 body {
-    color: rgb(218, 218, 218);
-    margin-top: 40px;
-    margin-bottom: 20px;
-    margin-right: 150px;
-    margin-left: 90px;
+  color: rgb(218, 218, 218);
+  margin: 0;
+  padding: 0;
+  background-color: rgb(31, 40, 44);
 }
 
 
@@ -49,12 +53,15 @@ body {
 /* --------------------------------------------------------------------- */
 
 #bar ul {
-  position: -webkit-sticky; /* Safari */
-  position: sticky;
-  top: 0;
+  width:100%;
   list-style-type: none;
   padding: 0;
   overflow: hidden;
+  top: 0;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  background-color: #1454d5;
+
 }
   
   #bar li {
@@ -68,13 +75,65 @@ body {
   }
   
   #bar li a:hover {
-    background-color: #005c2b;
+    background-color: #032d82;
   }
-  #bar .active {
-    background-color: #005c2b;
+  #bar .navbutton_active {
+    width: 150px; 
+    padding: 30px 0px;
+    text-align: center;
+    font-family: Arial;
+    font-size: 16pt;
+    background-color: #053fb2;
   }
   #bar .navbutton {
     width: 150px; 
     padding: 30px 0px;
     text-align: center;
+    font-family: Arial;
+    font-size: 16pt;
+    background-color: #1454d5;
   }
+
+
+  .footer {
+    position:absolute;
+    bottom:0;
+    width:100%;
+    text-align: right;
+    background-color: #1454d5;
+    padding: 20px 0px;
+
+  }
+
+
+  .column {
+    float: right;
+  }
+  
+  /* Left and right column */
+  .column.left {
+    width: 70%;
+  }
+  
+  /* Middle column */
+  .column.right {
+    width: 30%;
+    color: rgb(1, 1, 1);
+
+  }
+  
+/* Clear floats after the columns */
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 2.5rem;    /* Footer height */
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
