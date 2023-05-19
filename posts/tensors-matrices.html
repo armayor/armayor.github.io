@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Posts</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          "fast-preview": {disabled: true},
+          tex2jax: {preview: "none"}
+        });
+    </script>
+    
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="body">
+
+    <div id="page-container">
+        <!-- ---------------------------- Navitation bar ---------------------------- -->
+        <ul class="ul_bar">
+            <li class="li_bar"><a class="navbutton" href="../index.html"> &#xA7; Lapalissiano</a></li>
+            <li class="li_bar"><a class="navbutton_active" href="../posts.html">Posts</a></li>
+            <li class="li_bar", style="float:right"><a class="navbutton" href="../about.html">About this site</a></li>
+        </ul>
+        <!-- ------------------------ End of  Navitation bar ------------------------ -->
+    <div id="content-wrap">         
+        <div class="p_about">           
+            <h1>&#xA7; Tensors are not matrices</h1>
+            
+            Let \(V\) be a finite dimensional vector space over some field \(\mathbb{K}\) of scalars. We will denote vectors, 
+            that is, elements of the vector space, by Latin letters. Given a collection of different vectors, we will always 
+            index them with a lower index. Hence, a basis is denoted as \((e_1,\ldots, e_n)\) where \(n=\dim_\mathbb{K}V\). 
+            Thus, any vector \(v\in V\) may be written as a linear combination of these. We will call these coefficients 
+            <strong>coordinates</strong>, denote them also by Latin letters but this time, we will place an index upstairs:
+        
+            $$ 
+            \begin{equation}
+                \tag{1}
+                v = \sum_{i=1}^n v^i e_i
+            \end{equation}
+            $$
+            To simplify the notation, it is common practice to use the <strong>Einstein summation convention</strong>, in which 
+            a \(\sum\) symbol over each index that is repeated <strong>once upstairs and once downstairs</strong> is to be 
+            understood. We emphasize that the indices must be at different heights. With this convention, \((1)\) can be rewritten 
+            as \(v=v^ie_i\). Sometimes in Physics, it is common to see \(v=v_ie_i\) where the sum over \(i\) is to be understood. 
+            We will not do this. This is confusing since it does not follow any criterion. I will explain now why I care so much 
+            about the position of the indices.
+        </div>
+        <div class="p_about">
+            Connected to the notion of a vector space \(V\) is that of its <strong>dual</strong>, which we denote by \(V^*\). This 
+            space is the collection of all linear functionals \(\phi\colon V\to \mathbb{K}\). It can be shown that \(V^*\) is a 
+            vector space over the same field \(\mathbb{K}\) as \(V\). If \(V\) is finite dimensional, \(V^*\) can be shown to be 
+            finite dimensional and to have actually the same dimension as \(V\). We call the elements of \(V^*\) <strong>dual 
+            vectors</strong>, and the canonical basis for \(V^*\) is denoted by Greek letters indexed by upstairs indices, namely
+            \(\{\theta^i\}_{i=1}^n\), that satisfy \(\theta^i(e_j)=\delta^i_j\).
+        </div>
+        <div class="p_about"> 
+            Having introduced these basic concepts, we turn our attention to matrices. We all know what they are: rectangles filled 
+            with stuff. They have rows and columns, and they are very useful to represent linear maps between vector spaces because 
+            their multiplication rule coincides with the way maps are to be composed. Consider \(V\) and \(W\) to be \(n\) and \(m\) 
+            dimensional vector spaces over \(\mathbb{K}\), and a linear map \(f\colon V\to W\). We represent \(f\) via a matrix as 
+            follows: let \(\{e_i\}_{i=1}^n\) and \(\{u_i\}_{i=1}^m\) be bases for \(V\) and \(W\), respectively. Once we specify how 
+            \(f\) acts on \(\{e_i\}_{i=1}^n\) we have fully determined it, since any other vector \(v\in V\) can be written in terms 
+            of \(\{e_i\}_{i=1}^n\). Suppose that \(f(e_1)=f^{j}{}_{1}u_j, \ldots, f(e_n)=f^{j}{}_{n}u_j\). We arrange this 
+            numbers as:
+    
+            $$
+            \begin{equation}
+            \tag{2}
+                f\equiv\begin{pmatrix}
+                f^{1}{}_{1} & \cdots & f^{1}{}_{n}\\
+                \vdots & \ddots & \vdots\\
+                f^{m}{}_{1} & \cdots & f^{m}{}_{n}
+            \end{pmatrix}
+            \end{equation}
+            $$
+            
+            Any vector \(v=v^ie_i\) will have (if you do not trust me please do the calculations) the image \(w=w^ie_i=f(v)\) 
+            given by:
+    
+            $$
+            \begin{equation}
+                f(v) = \begin{pmatrix}
+                            f^{1}{}_{1} & \cdots & f^{1}{}_{n}\\
+                            \vdots & \ddots & \vdots\\
+                            f^{m}{}_{1} & \cdots & f^{m}{}_{n}
+                        \end{pmatrix}
+                        \begin{pmatrix}
+                            v^1 \\
+                            \vdots\\
+                            v^n
+                        \end{pmatrix} = 
+                        \begin{pmatrix}
+                            w^1 \\
+                            \vdots\\
+                            w^m
+                        \end{pmatrix}
+            \end{equation}
+            $$
+    
+            We see that each coordinate of \(f(v)\) is \(w^i = f^{i}{}_{j}v^j\) and that the position of the non-contracted 
+            indices (indices not appearing in a sum) on both sides of the previous equation is the same. Hence, a linear map 
+            between two vector spaces may be represented by a collection of numbers \(\{f^{i}{}_{j}\}\) where \(1\leq i\leq m\) 
+            and \(1\leq j\leq n\).
+            
+            <div class="definition">
+                <strong>Definition I. </strong> Let \(V,W\) be \(n-\) and \(m-\)dimensional vector spaces over \(\mathbb{K}\). 
+                We denote the set of all linear maps between \(V\) and \(W\) by \(\text{Hom}(V,W)\) and call them <strong>homomorphisms
+                </strong>.
+            </div>
+
+    
+             Hence, a linear map like the above belongs to \(\textrm{Hom}(V,W)\). Any homomorphism is a \(W-\)valued function: 
+             it <em>eats</em> a vector from \(V\) to produce some scalars that then combines with vectors in \(W\), hence producing 
+             as an output a vector in \(W\). Something that takes vectors in \(V\) and returns scalars is an element in \(V^*\), 
+             the dual of \(V\). To make this a \(W-\)valued map, we simply take the tensor product with \(W\). This motivates the 
+             following isomorphism:
+    
+            $$
+            \begin{equation}
+                \text{Hom}(V,W)\cong V^*\otimes W
+            \end{equation}
+            $$
+    
+            A basis for \(V^*\otimes W\) is nothing but \(\{\theta^j\otimes e_i\}\), and a general element \(f\in V^*\otimes W\) is 
+            written as \(f^{i}{}_{j}\theta^j\otimes e_i\), which is consistent with the description we gave some lines above of 
+            a linear map between \(V\) and \(W\).
+    
+            What about <strong>bilinear maps</strong> \(f\colon V\times W\to \mathbb{K}\)? Are they also represented by 
+            \(\{f^{i}{}_{j}\}\)? No. But hey, they can also be represented by matrices! Yes, but they do not return a vector! 
+            Instead they spit out a number on the field. Bilinear maps are thus elements of \(V^*\otimes W^*\), and hence, they are 
+            naturally represented by numbers \(\{f_{ij}\}\). These act on two vectors \(v= v^ie_i\) and \(w=w^je_j\), 
+            and fully contract the indices to produce a scalar: \(f_{ij}v^iw^j=c\) where \(c\in\mathbb{K}\).
+    
+            $$
+            \begin{equation}
+                f(v,w) = \begin{pmatrix}
+                            w^1
+                            \ldots
+                            w^m
+                        \end{pmatrix}
+                        \begin{pmatrix}
+                            f_{11} & \cdots & f_{1n}\\
+                            \vdots & \ddots & \vdots\\
+                            f_{m1} & \cdots & f_{mn}
+                         \end{pmatrix}
+                         \begin{pmatrix}
+                            v^1 \\
+                            \vdots\\
+                            v^n
+                        \end{pmatrix}
+            \end{equation}
+            $$
+    
+            This shows that matrices represent tensors, but a rectangle of numbers can itself represent different kinds of tensors. 
+            This means that a tensor is not a matrix, but a more abstract object, whereas a matrix is simply a useful way to represent 
+            it. Generalizing this,
+            
+            <div class="definition">
+                <strong>Definition II. </strong> a <strong>multilinear map</strong> 
+                \(f\colon V_1\times \cdots \times V_p\times W_1^*\times\cdots W_q^*\to\mathbb{K}\) is an element of 
+                \(V_1^*\otimes \cdots V_p^*\otimes W_1\otimes \cdots \otimes W_q\) and is called a \((p,q)-\)<strong>tensor</strong>.
+            </div>
+
+    </div>
+    </div>
+        <footer id="footer">
+            <div class="footer">
+                Copyright &copy; 2023 &#x2022; Miguel Armayor Mart&iacute;nez &#x2022; All rights reserved
+            </div>
+        </footer>
+    </div>
+    
+    
+        
+    
+    
+            
+              
+           
+    
+</body>
+</html>
