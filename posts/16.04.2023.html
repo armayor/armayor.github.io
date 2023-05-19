@@ -6,34 +6,41 @@
     </script>
     <link rel="stylesheet" href="../style.css">
 </head>
-<body>
-    <!-- ---------------------------- Navitation bar ---------------------------- -->
-    <nav id="bar" role="navigation">
-    <ul>
-        <li><a class="navbutton" href="../index.html"> &#xA7; Lapalissiano</a></li>
-        <li><a class="active navbutton" href="../posts.html">Posts</a></li>
-        <li style="float:right"><a class="navbutton" href="../about.html">About this site</a></li>
-    </ul>
-    </nav>
-    <!-- ------------------------ End of  Navitation bar ------------------------ -->
+<body class="body">
 
+    <div id="page-container">
+        <!-- ---------------------------- Navitation bar ---------------------------- -->
+        <ul class="ul_bar">
+            <li class="li_bar"><a class="navbutton" href="../index.html"> &#xA7; Lapalissiano</a></li>
+            <li class="li_bar"><a class="navbutton_active" href="../posts.html">Posts</a></li>
+            <li class="li_bar", style="float:right"><a class="navbutton" href="../about.html">About this site</a></li>
+        </ul>
+            <!-- ------------------------ End of  Navitation bar ------------------------ -->
+    <div id="content-wrap">
+                    
+        <div class="p_about">           
         <h1>&#xA7; Equivalent Definitions of One-forms</h1>
 
-        <p>
+    
+        <div class="definition">
             <strong>Definition I. </strong> Let \(M\) be a manifold and consider the cotangent bundle \((T^*M, \pi,M)\). 
             <strong>A one-form</strong> on \(M\) is a section \(\omega\in\Gamma(T^*M):=\Omega^1(M)\).
-        </p>
+        </div>
+    
 
-        <p>
+        
+        <div class="definition">
             <strong>Definition II. </strong> Let \(M\) be a manifold and consider the cotangent bundle \((T^*M, \pi,M)\). 
-            <strong>A one-form</strong> on \(M\) is a is a map \(\omega\colon \Gamma(TM)\to \mathcal{C}^\infty(M)\).
-        </p>
+            <strong>A one-form</strong> on \(M\) is a map \(\omega\colon \Gamma(TM)\to \mathcal{C}^\infty(M)\).
+        </div>
+        
 
-        <p>
+        <div class="definition">
             <strong>Proposition. </strong> Both definitions of one-forms are equivalent.
-        </p>
-        <p>
-            <em>Proof. </em>  Suppose that a one-form is a section \(\omega\in \Gamma(T^*M)\). Then, \(\omega\colon M\to T^*M\), 
+        </div>
+            
+        <div class="proof">
+            Proof. Suppose that a one-form is a section \(\omega\in \Gamma(T^*M)\). Then, \(\omega\colon M\to T^*M\), 
             so that \(\omega(p):=(p, \omega_p)\), where \(\omega_{p}\in T^*_pM\). We can define a map \(\Omega \colon \Gamma(TM)\to\mathcal{C}^\infty(M)\) 
             such that for a section \(X\in\Gamma(TM)\), given by \(X(p)=(p,X_p)\) where \(X_p\in T_pM\), we have:
 
@@ -42,49 +49,32 @@
             \end{equation}$$
     
             After which we simply rename \(\Omega\equiv\omega\) and we have shown one implication. 
-        </p>
-        <p>It remains to show, that if \(\omega\colon \Gamma(TM)\to \mathcal{C}^\infty(M)\), then we can define a smooth section 
-        \(\Omega\in\Gamma(T^*M)\). We do so as follows: for each \(p\in M\), we define \(\Omega(p)=(p,\Omega_p)\), where 
-        \(\Omega_p\in T^*_pM\) is defined via \(\Omega_p(X_p):=\omega(X)(p)\), where the vector field \(X\) is constructed 
-        such that \(X(p)=(p,X_p)\). \(\blacksquare\)
-        </p>
+            </p>
+            <p>It remains to show, that if \(\omega\colon \Gamma(TM)\to \mathcal{C}^\infty(M)\), then we can define a smooth section 
+            \(\Omega\in\Gamma(T^*M)\). We do so as follows: for each \(p\in M\), we define \(\Omega(p)=(p,\Omega_p)\), where 
+            \(\Omega_p\in T^*_pM\) is defined via \(\Omega_p(X_p):=\omega(X)(p)\), where the vector field \(X\) is constructed 
+            such that \(X(p)=(p,X_p)\). \(\blacksquare\)
+            </p>
+        </div>
 
-        <p>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et 
-            dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet 
-            clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, 
-            consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
-            sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea 
-            takimata sanctus est Lorem ipsum dolor sit amet.
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et 
-            dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet 
-            clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, 
-            consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
-            sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea 
-            takimata sanctus est Lorem ipsum dolor sit amet.
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et 
-            dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet 
-            clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, 
-            consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
-            sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea 
-            takimata sanctus est Lorem ipsum dolor sit amet.
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et 
-            dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet 
-            clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, 
-            consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
-            sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea 
-            takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed 
-            diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et 
-            accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum 
-            dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt 
-            ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea 
-            rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor 
-            sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam 
-            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
-            no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
-            sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos 
-            et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum 
-            dolor sit amet.
-        </p>
-    </body>
-</html>
+    </div>
+                      
+                </div>
+                <footer id="footer">
+                    <div class="footer">
+                        Yomismosdf
+    
+                    </div>
+                </footer>
+            </div>
+    
+    
+        
+    
+    
+            
+              
+           
+    
+        </body>
+    </html>

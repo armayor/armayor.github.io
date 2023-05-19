@@ -3,14 +3,6 @@
   padding:0;  
 }
 
-  p {
-    font-size: 14pt;
-    font-family: serif;
-    margin-bottom: 20px;
-    margin-right: 150px;
-    margin-left: 150px;
-    margin-top: 10px;
-  }
 
   /* unvisited link */
 a:link {
@@ -32,7 +24,7 @@ a:active {
   color: rgb(255, 255, 255);
 }
 
-body.welcome {
+.body_index {
   color: rgb(218, 218, 218);
   margin: 0;
   padding: 0;
@@ -43,6 +35,7 @@ body.welcome {
   background-size: cover;
 
 }
+
 body {
   color: rgb(218, 218, 218);
   margin: 0;
@@ -50,11 +43,11 @@ body {
   background-color: rgb(31, 40, 44);
 }
 
-
+/* --------------------------------------------------------------------- */
 /* ---------------------- Navigation bar settings ---------------------- */
 /* --------------------------------------------------------------------- */
 
-#bar ul {
+.ul_bar {
   width:100%;
   list-style-type: none;
   padding: 0;
@@ -65,21 +58,21 @@ body {
   background-color: #1454d5;
 
 }
-  
-  #bar li {
-    float: left;
-  }
-  
-  #bar li a {
+
+.li_bar {
+  float: left;
+}
+
+.li_bar a {
     display: block;
     color: white;
     text-decoration: none;
   }
   
-  #bar li a:hover {
+.li_bar a:hover {
     background-color: #032d82;
   }
-  #bar .navbutton_active {
+.navbutton_active {
     width: 150px; 
     padding: 30px 0px;
     text-align: center;
@@ -87,7 +80,7 @@ body {
     font-size: 16pt;
     background-color: #053fb2;
   }
-  #bar .navbutton {
+.navbutton {
     width: 150px; 
     padding: 30px 0px;
     text-align: center;
@@ -97,6 +90,9 @@ body {
   }
 
 
+/* --------------------------------------------------------------------- */
+/* ------------------------------ Footer ------------------------------- */
+/* --------------------------------------------------------------------- */
   .footer {
     position:absolute;
     bottom:0;
@@ -104,6 +100,7 @@ body {
     text-align: right;
     background-color: #1454d5;
     padding: 20px 0px;
+    margin-right: 100px;
 
   }
 
@@ -114,14 +111,12 @@ body {
   
   /* Left and right column */
   .column.left {
-    width: 70%;
+    width: 60%;
   }
   
   /* Middle column */
   .column.right {
-    width: 30%;
-    color: rgb(1, 1, 1);
-
+    width: 40%;
   }
   
 /* Clear floats after the columns */
@@ -137,5 +132,58 @@ body {
   content: "";
   display: table;
   clear: both;
+}
+
+
+
+/* --------------------------------------------------------------------- */
+/* --------------------------- Welcome Page ---------------------------- */
+/* --------------------------------------------------------------------- */
+
+#Welcome{
+  font-size: 42pt;
+  font-family: Helvetica;
+  color: rgb(199, 193, 193);
+  margin-bottom: 20%;
+  margin-right: 5%;
+  margin-left: 5%;
+  margin-top: 20%;
+  background-color: #1454d5;
+  opacity: 0.7;
+  text-align: left;
+}
+
+/* --------------------------------------------------------------------- */
+/* ---------------------------- About Page ----------------------------- */
+/* --------------------------------------------------------------------- */
+
+
+.p_about{
+  font-size: 14pt;
+  font-family: sans-serif;
+  color: rgb(199, 193, 193);
+  margin-bottom: 7%;
+  margin-right: 20%;
+  margin-left: 20%;
+  margin-top: 7%;
+  text-align: left;
+}
+
+.definition{
+  font-size: 14pt;
+  font-family: sans-serif;
+  color: rgb(199, 193, 193);
+  font-style: italic;
+  margin-bottom: 2%;
+  margin-top: 2%;
+}
+
+.proof{
+  font-size: 14pt;
+  font-family: 'Courier New';
+  color: rgb(199, 193, 193);
+  font-style: italic;
+  margin-bottom: 2%;
+  margin-top: 2%;
 }
 
