@@ -5,7 +5,7 @@
 
 
   /* unvisited link */
-  a:link {
+a:link {
   color: rgb(218, 218, 218);
 }
 
@@ -75,19 +75,21 @@ body {
   }
 .navbutton_active {
     width: 150px; 
-    padding: 30px 0px;
+    padding: 22px 0px;
     text-align: center;
     font-family: Arial;
     font-size: 16pt;
     background-color: #053fb2;
+    transition: 0.3s
   }
 .navbutton {
     width: 150px; 
-    padding: 30px 0px;
+    padding: 22px 0px;
     text-align: center;
     font-family: Arial;
     font-size: 16pt;
     background-color: #1454d5;
+    transition: 0.3s
   }
 
 
@@ -102,7 +104,7 @@ body {
     background-color: #1454d5;
     padding: 20px 0px;
     margin-right: 100px;
-
+    font-family: sans-serif;
   }
 
 
@@ -143,7 +145,7 @@ body {
 
 #Welcome{
   font-size: 42pt;
-  font-family: Helvetica;
+  font-family: sans-serif;
   color: rgb(199, 193, 193);
   margin-bottom: 20%;
   margin-right: 5%;
@@ -168,6 +170,7 @@ body {
   margin-left: 20%;
   margin-top: 2%;
   text-align: left;
+  line-height: 150%;
 }
 
 .definition{
@@ -177,6 +180,7 @@ body {
   font-style: italic;
   margin-bottom: 2%;
   margin-top: 2%;
+  background-color: #1454d5;
 }
 
 .proof{
@@ -198,4 +202,30 @@ body {
   margin-left: 20%;
   margin-top: 1%;
   text-align: left;
+}
+
+
+.ul_posts {
+  margin-bottom: 1%;
+  margin-right: 20%;
+  margin-left: 20%;
+  margin-top: 1%;
+}
+
+.li_posts {
+  font-size: 20pt;
+  margin-bottom: 1%;
+  margin-top: 3%;
+}
+
+.li_posts a {
+  font-size: 22pt;
+}
+
+.article_title{
+  margin-bottom: 4%;
+  font-size: 28pt;
+  margin-top: 1%;
+  border-bottom: 4px solid #1454d5;
+  line-height: 150%;
 }
