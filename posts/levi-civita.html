@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Posts</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          "fast-preview": {disabled: true},
+          tex2jax: {preview: "none"}
+        });
+    </script>
+    
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="body">
+
+    <div id="page-container">
+        <!-- ---------------------------- Navitation bar ---------------------------- -->
+        <ul class="ul_bar">
+            <li class="li_bar"><a class="navbutton" href="../index.html">  Lapalissiano</a></li>
+            <li class="li_bar"><a class="navbutton_active" href="../posts.html"> &#xA7; Posts</a></li>
+            <li class="li_bar", style="float:right"><a class="navbutton" href="../about.html"> About</a></li>
+        </ul>
+        <!-- ------------------------ End of  Navitation bar ------------------------ -->
+    <div id="content-wrap">         
+        <div class="p_about">           
+            <h1 class="article_title">&#xA7; About the Levi-Civita symbol</h1>
+            
+            
+            <div class="definition">
+                <strong>Definition II. </strong> Let \(\mathbb{K}\) be a field and consider a matrix \(A\in \text{Mat}_{n\times n}(\mathbb{K})\) 
+                which has index structure \(A^i{}_j\). We define the <strong>Levi-Civita symbols</strong> \(\epsilon_{i_1i_2\ldots i_n}\) 
+                and \(\epsilon^{i_1i_2\ldots i_n}\) by means of setting:
+                $$
+                    \det\{A\} := \epsilon_{i_1i_2\ldots i_n}A^{i_1}{}_1A^{i_2}{}_2\cdots A^{i_n}{}_n := \epsilon^{i_1i_2\ldots i_n}A^1{}_{i_1}A^2{}_{i_2}\cdots A^n{}_{i_n}
+                $$
+                where \(\det\{\cdot\}\) simply denotes the determinant map.
+            </div>
+            
+            One can convince themself that this definition suffices to define the totally anti-symmetric symbol. Indeed, for the case 
+            \(n=3\) we may simply write:
+
+            $$
+            \begin{align}
+                \det\{A\} &= \det \begin{pmatrix} A^1{}_1 & A^1{}_2 & A^1{}_3 \\ 
+                                                  A^2{}_1 & A^2{}_2 & A^2{}_3 \\ 
+                                                  A^3{}_1 & A^3{}_2 & A^3{}_3
+                                   \end{pmatrix} =\\
+                          &= \hphantom{+}A^1{}_1A^2{}_2A^3{}_3 + A^3{}_1A^1{}_2A^2{}_3 + A^2{}_1A^3{}_2A^1{}_3 +\\
+                          &\hphantom{=}- A^3{}_1A^2{}_2A^1{}_3 - A^1{}_1A^3{}_2A^2{}_3 - A^2{}_1A^1{}_2A^3{}_3
+            \end{align}
+            $$
+            
+            which clearly sets \(\epsilon_{123}=\epsilon_{312}=\epsilon_{231}=1\), \(\epsilon_{321}=\epsilon_{132}=\epsilon_{213}=-1\) 
+            being all the components with repeated indices zero. 
+        </div>
+        <div class="p_about">
+
+            Let us now take the canonical basis \(\{\mathbf{e}_i\}_{i=1}^n\) of the \(n-\)dimensional \(\mathbb{R}-\)vector space 
+            \(\mathbb{R}^n\), where each vector has \(a-\)th component given by \((\mathbf{e}_i)^a=\delta^a_i\). Similarly, we 
+            introduce the dual canonical basis \(\{\mathbf{e}^i\}_{i=1}^n\) satisfying \((\mathbf{e}^i)_a=\delta^i_a\). There is the natural 
+            identification of \(\{\mathbf{e}_i\}_{i=1}^n\) with column-vectors and of \(\{\mathbf{e}^i\}_{i=1}^n\) with row vectors. 
+            This way of viewing these vectors allows us to define the following matrices:
+
+            $$
+                E = \begin{pmatrix} \mathbf{e}_{\sigma(1)} & \mathbf{e}_{\sigma(2)} & \cdots & \mathbf{e}_{\sigma(n)}\end{pmatrix} 
+                \in \text{Mat}_{n\times n}(\mathbb{K})
+            $$
+            
+            where \(\sigma \in S_n\), being \(S_n\) the symmetric group on \(n\) elements. The matrix \(E\) clearly verifies that 
+            its transpose is given by
+
+            $$
+                E^T = \begin{pmatrix} \mathbf{e}^{\sigma(1)} \\ \mathbf{e}^{\sigma(2)} \\ \vdots \\ \mathbf{e}^{\sigma(n)}\end{pmatrix} 
+                \in \text{Mat}_{n\times n}(\mathbb{K})
+            $$
+            
+            In index notation, \(E^a{}_b=(\mathbf{e}_b)^a=\delta^a_b\), whereas \((E^T)^a{}_b=(\mathbf{e}^a)_b=\delta^a_b\). This implies
+            that
+
+            $$
+                \det\{E\}= \epsilon_{i_1i_2\ldots i_n} \delta^{i_1}_{\sigma(1)}\delta^{i_2}_{\sigma(2)}\cdots \delta^{i_n}_{\sigma(n)} =
+                \epsilon_{\sigma(1)\sigma(2)\ldots \sigma(n)}
+            $$
+
+            and also, using this time the Levi-Civita with the upper indices for computing the determinant of the transpose
+
+            $$
+                \det\{E^T\}= \epsilon^{i_1i_2\ldots i_n} \delta_{i_1}^{\sigma(1)}\delta_{i_2}^{\sigma(2)}\cdots \delta_{i_n}^{\sigma(n)} =
+                \epsilon^{\sigma(1)\sigma(2)\ldots \sigma(n)}
+            $$
+
+            and since \(\det\{E\}=\det\{E^T\}\) we have:
+
+            $$
+                \epsilon_{\sigma(1)\sigma(2)\ldots \sigma(n)} = \epsilon^{\sigma(1)\sigma(2)\ldots \sigma(n)}
+            $$
+
+            in other words, we do not really care about whether our indices are upstairs or downstairs. Let us now try to compute the 
+            following product:
+
+            $$
+            \begin{align}
+                \epsilon^{\sigma(1)\sigma(2)\ldots \sigma(n)}\epsilon_{\tau(1)\tau(2)\ldots \tau(n)} &= \det\{E^T\}\det\{E\}=\det\{E^TE\}=\\
+                &=
+                \det\left\{\begin{pmatrix} \mathbf{e}^{\sigma(1)} \\ \mathbf{e}^{\sigma(2)} \\ \vdots \\ \mathbf{e}^{\sigma(n)}\end{pmatrix}
+                \begin{pmatrix} \mathbf{e}_{\tau(1)} & \mathbf{e}_{\tau(2)} & \cdots & \mathbf{e}_{\tau(n)}\end{pmatrix}\right\}=\\
+                &= \det \begin{pmatrix} 
+                \mathbf{e}^{\sigma(1)}\cdot \mathbf{e}_{\tau(1)} &\mathbf{e}^{\sigma(1)}\cdot \mathbf{e}_{\tau(2)} & \cdots & \mathbf{e}^{\sigma(1)}\cdot \mathbf{e}_{\tau(n)} \\
+                \mathbf{e}^{\sigma(2)}\cdot \mathbf{e}_{\tau(1)} &\mathbf{e}^{\sigma(2)}\cdot \mathbf{e}_{\tau(2)} & \cdots &\mathbf{e}^{\sigma(2)}\cdot \mathbf{e}_{\tau(n)} \\
+                \vdots & \vdots & \ddots & \vdots\\
+                \mathbf{e}^{\sigma(n)}\cdot \mathbf{e}_{\tau(1)} &\mathbf{e}^{\sigma(n)}\cdot \mathbf{e}_{\tau(2)} & \cdots & \mathbf{e}^{\sigma(n)}\cdot \mathbf{e}_{\tau(n)} \\
+                \end{pmatrix}=\\
+                &= \det\begin{pmatrix}
+                \delta^{\sigma(1)}_{\tau(1)} & \delta^{\sigma(1)}_{\tau(2)} & \cdots & \delta^{\sigma(1)}_{\tau(n)}\\
+                \delta^{\sigma(2)}_{\tau(1)} & \delta^{\sigma(2)}_{\tau(2)} & \cdots & \delta^{\sigma(2)}_{\tau(n)}\\
+                \vdots & \vdots & \ddots & \vdots\\
+                \delta^{\sigma(n)}_{\tau(1)} & \delta^{\sigma(n)}_{\tau(2)} & \cdots & \delta^{\sigma(n)}_{\tau(n)}\\
+                \end{pmatrix}
+            \end{align}
+            $$
+
+            As before, let us consider the three dimensional case and denote \(\sigma(1)=i, \sigma(2)=j, \sigma(3)=k\) and 
+            \(\tau(1)=l, \tau(2)=m, \tau(3)=n\)
+
+            $$
+                \epsilon^{ijk}\epsilon_{lmn}= 
+                \det \begin{pmatrix}
+                \delta^i_l & \delta^i_m &\delta^i_n \\
+                \delta^j_l & \delta^j_m &\delta^j_n \\
+                \delta^k_l & \delta^k_m &\delta^k_n \\
+                \end{pmatrix}
+            $$
+
+            Should \(l=i\), then for this product to be non zero clearly \(j\neq i\neq k\), and \(m\neq l \neq n\) and thus,
+
+            $$
+                \epsilon^{ijk}\epsilon_{imn}= 
+                \det \begin{pmatrix}
+                1 & 0 & 0 \\
+                0 & \delta^j_m &\delta^j_n \\
+                0 & \delta^k_m &\delta^k_n \\
+                \end{pmatrix} = 
+                \delta^j_m\delta^k_n-\delta^j_n\delta^k_m
+            $$
+        </div>
+    </div>
+        <footer id="footer">
+            <div class="footer">
+                Copyright &copy; 2023 &#x2022; Miguel Armayor Mart&iacute;nez &#x2022; All rights reserved
+            </div>
+        </footer>
+    </div>
+    
+    
+        
+    
+    
+            
+              
+           
+    
+</body>
+</html>
