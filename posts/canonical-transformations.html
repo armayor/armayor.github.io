@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Posts</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          "fast-preview": {disabled: true},
+          tex2jax: {preview: "none"}        });
+    </script>
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="body">
+
+    <div id="page-container">
+        <!-- ---------------------------- Navitation bar ---------------------------- -->
+        <ul class="ul_bar">
+            <li class="li_bar"><a class="navbutton" href="../index.html">  Lapalissiano</a></li>
+            <li class="li_bar"><a class="navbutton_active" href="../posts.html"> &#xA7; Posts</a></li>
+            <li class="li_bar", style="float:right"><a class="navbutton" href="../about.html"> About</a></li>
+        </ul>
+        <!-- ------------------------ End of  Navitation bar ------------------------ -->
+    <div id="content-wrap">         
+        <div class="p_about">           
+            <h1 class="article_title">&#xA7; Canonical Transformations</h1>
+            
+            The content of this post is based on the <a href="https://www.math.unipd.it/~benettin/links-MA/ma-17_10_25.pdf">notes</a> 
+            written by <a href="https://www.math.unipd.it/~benettin/">Giancarlo Benettin</a>. These are not only exceptionally well 
+            written, but are also very rigorous in their approach. I will try to summarize briefly the most important concepts to clarify 
+            what <strong>canonical transformations</strong> are.
+
+            <div class="definition">
+                <strong>Definition I. </strong> Let \(\Omega\subseteq \mathbb{R}^{2n}\) and \(\tilde{\Omega}\subseteq \mathbb{R}^{2n}\) 
+                be two open subsets. Consider coordinates \((\mathbf{p},\mathbf{q})\) on \(\Omega\) and  \((\tilde{\mathbf{p}},\tilde{\mathbf{q}})\) 
+                on \(\tilde{\Omega}\). Let
+                $$
+                    \begin{align}
+                        w\colon \tilde{\Omega} &\to \Omega\\
+                        (\tilde{\mathbf{p}},\tilde{\mathbf{q}}) &\mapsto w(\tilde{\mathbf{p}},\tilde{\mathbf{q}}):= (u(\tilde{\mathbf{p}},\tilde{\mathbf{q}}), v(\tilde{\mathbf{p}},\tilde{\mathbf{q}}))
+                    \end{align}
+                $$
+                be a diffeomorphism (differentiable map whose inverse is also differentiable). We will say that \(w\) defines a 
+                <strong>restricted time-independent canonical transformation</strong> if, for any \(H\) defining a Hamiltonian system 
+                in \(\Omega\), the function \(\tilde{H}:=H\circ w\) defines a hamiltonian system in \(\tilde{\Omega}\), i.e.
+
+
+                $$
+                    \dot{\tilde{\mathbf{p}}}= - \dfrac{\partial \tilde{H}}{\partial \tilde{\mathbf{q}}} \quad \quad  \dot{\tilde{\mathbf{q}}}=  \dfrac{\partial \tilde{H}}{\partial \tilde{\mathbf{p}}}
+                $$
+            </div>
+            
+            Note that, abusing (a bit) of notation, we can view the coordinates \(p,q\) as functions of \((\tilde{\mathbf{p}},\tilde{\mathbf{q}})\), 
+            this meaning that we may call \(u=p\), and \(v=q\).
+        </div>
+        <div class="p_about">
+            <strong>Example. </strong> Let's consider \(\Omega = \tilde{\Omega}=\mathbb{R}^2\) and for \(a,b\in\mathbb{R}\) the diffeomorphism
+
+            $$
+                \begin{align}
+                    w\colon \tilde{\Omega} &\to \Omega\\
+                    (\tilde{p},\tilde{q}) &\mapsto (u(\tilde{p},\tilde{q}), v(\tilde{p},\tilde{q})):=(\tilde{p}+a,\tilde{q}+b)
+                \end{align}
+            $$
+            In order to see that \(w\) defines a <strong>restricted time-independent canonical transformation</strong>, we need to 
+            verify that, for any Hamiltonian \(H\) that defines the Hamiltonian system
+
+            $$
+                \dot{p} = -\dfrac{\partial H}{\partial q} \quad \dot{q} = \dfrac{\partial H}{\partial p}
+            $$
+                
+            the fucntion \(\tilde{H}:= H\circ w\) also defines a Hamiltonian system, but in the new variables, namely that
+
+
+            $$
+                \dot{\tilde{p}} = -\dfrac{\partial \tilde{H}}{\partial \tilde{q}} \quad \dot{\tilde{q}} = \dfrac{\partial \tilde{H}}{\partial \tilde{p}}
+            $$
+
+            Indeed, recalling the abuse of notation \(p=u\), we have:
+
+            $$
+                \begin{align}
+                    \dfrac{\partial \tilde{H}}{\partial \tilde{q}} &= \dfrac{\partial}{\partial \tilde{q}}(H\circ w)=
+                    \begin{pmatrix} \dfrac{\partial H}{\partial p} & \dfrac{\partial H}{\partial q}\end{pmatrix}
+                    \begin{pmatrix} \dfrac{\partial p}{\partial \tilde{q}} \\ \dfrac{\partial q}{\partial \tilde{q}}\end{pmatrix}=
+                    \begin{pmatrix} \dot{q} & -\dot{p}\end{pmatrix} \begin{pmatrix} 0 \\ 1\end{pmatrix}=\\
+                    &= -\dot{p} = -\dot{\tilde{p}+a}= -\dot{\tilde{p}}
+                \end{align}
+            $$ 
+            Thus, we get the desired result
+
+            $$
+                \dot{\tilde{p}} = -\dfrac{\partial \tilde{H}}{\partial \tilde{q}}
+            $$
+
+            Similarly one can also check that the result holds for for the other Hamilton equation.
+        </div>
+        <div class="p_about">
+            <div class="definition">
+                <strong>Definition II. </strong> Let \(\Omega\subseteq \mathbb{R}^{2n}\) and \(\tilde{\Omega}\subseteq \mathbb{R}^{2n}\) 
+                be two open subsets. Consider coordinates \((\mathbf{p},\mathbf{q})\) on \(\Omega\) and  \((\tilde{\mathbf{p}},\tilde{\mathbf{q}})\) 
+                on \(\tilde{\Omega}\). Let
+                $$
+                    \begin{align}
+                        w\colon \tilde{\Omega} &\to \Omega\\
+                        (\tilde{\mathbf{p}},\tilde{\mathbf{q}}) &\mapsto w(\tilde{\mathbf{p}},\tilde{\mathbf{q}}):= (u(\tilde{\mathbf{p}},\tilde{\mathbf{q}}), v(\tilde{\mathbf{p}},\tilde{\mathbf{q}}))
+                    \end{align}
+                $$
+                be a diffeomorphism (differentiable map whose inverse is also differentiable). We will say that \(w\) defines a 
+                <strong>general time-independent canonical transformation</strong> if, for any \(H\) defining a Hamiltonian system 
+                in \(\Omega\), there exists a function \(\tilde{H}\colon \tilde{\Omega}\to\mathbb{R}\) that defines a hamiltonian 
+                system in \(\tilde{\Omega}\), i.e.
+
+
+                $$
+                    \dot{\tilde{\mathbf{p}}}= - \dfrac{\partial \tilde{H}}{\partial \tilde{\mathbf{q}}} \quad \quad  \dot{\tilde{\mathbf{q}}}=  \dfrac{\partial \tilde{H}}{\partial \tilde{\mathbf{p}}}
+                $$
+            </div>
+            
+            Note that this differs from <strong>Definition I</strong> only by the fact that here, no special definition of \(\tilde{H}\) 
+            is given. This makes <strong>Definition II</strong> more general than <strong>Definition I</strong>. In particular, this means that
+            there might exist transformations that are general time-independent canonical that are not restricted time-independent canonical. For 
+            instance, in the case \(\Omega = \tilde{\Omega}=\mathbb{R}^2\) and \(a,b\in\mathbb{R}\) verifying \(a\cdot b= c^{-1}\)
+
+            $$
+                \begin{align}
+                w\colon \tilde{\Omega} &\to \Omega\\
+                (\tilde{p},\tilde{q}) &\mapsto (u(\tilde{p},\tilde{q}), v(\tilde{p},\tilde{q})):= (a\tilde{p}, b\tilde{q})
+                \end{align}
+            $$
+
+            is general time-independent canonical when \(\tilde{H}=cH\circ w\), which is (generally) different from \(H\circ w\).
+
+        </div>
+        <div class="p_about">
+            It is also common to define canonical transformations as those who preserve the Poisson brackets. We now make clear what we mean
+            by this.
+
+            <div class="definition">
+                <strong>Definition III. </strong> Let \(\Omega\subseteq \mathbb{R}^{2n}\) and \(\tilde{\Omega}\subseteq \mathbb{R}^{2n}\) 
+                be two open subsets. Consider coordinates \((\mathbf{p},\mathbf{q})\) on \(\Omega\) and  \((\tilde{\mathbf{p}},\tilde{\mathbf{q}})\) 
+                on \(\tilde{\Omega}\). Let
+                $$
+                    \begin{align}
+                        w\colon \tilde{\Omega} &\to \Omega\\
+                        (\tilde{\mathbf{p}},\tilde{\mathbf{q}}) &\mapsto w(\tilde{\mathbf{p}},\tilde{\mathbf{q}}):= (u(\tilde{\mathbf{p}},\tilde{\mathbf{q}}), v(\tilde{\mathbf{p}},\tilde{\mathbf{q}}))
+                    \end{align}
+                $$
+                be a diffeomorphism (differentiable map whose inverse is also differentiable). Furthermore, let 
+                
+                $$
+                    f,g\colon \Omega \to \mathbb{R}
+                $$
+
+                be two differentiable functions. We will say that \(w\) <strong>preserves the Poisson bracket \(\{f,g\}\)</strong> if
+                $$
+                    \{f\circ w, g\circ w\}_{(\tilde{\mathbf{p}}, \tilde{\mathbf{q}})} = \{f, g\}_{(\mathbf{p}, \mathbf{q})}\circ w
+                $$
+            </div>
+
+            <div class="definition">
+                <strong>Proposition IV. </strong> \(w\) preserves the Poisson bracket if and only if it is a restricted time-independent 
+                canonical transformation.
+            </div>
+
+            <div class="definition">
+                <strong>Proposition IV. </strong> \(w\) preserves the Poisson bracket if and only if
+
+                $$
+                    \{u_i, u_j\}_{(\tilde{\mathbf{p}}, \tilde{\mathbf{q}})} = 0 = \{v_i, v_j\}_{(\tilde{\mathbf{p}}, \tilde{\mathbf{q}})}
+                    \quad \{v_i, u_j\}_{(\tilde{\mathbf{p}}, \tilde{\mathbf{q}})}= \delta_{ij} \quad \forall i,j = 1,\ldots, n
+                $$
+            </div>
+            
+            For generalized time-independent canonical transformations, the preservation of the Poisson brackets takes a different form.
+        </div>
+    </div>
+        <footer id="footer">
+            <div class="footer">
+                Copyright &copy; 2023 &#x2022; Miguel Armayor Mart&iacute;nez &#x2022; All rights reserved
+            </div>
+        </footer>
+    </div>
+    
+    
+        
+    
+    
+            
+              
+           
+    
+</body>
+</html>
